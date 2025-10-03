@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habedee</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Musik Background -->
+    <audio id="bgMusic" loop>
+      <source src="ultah.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Suara Flip -->
+    <audio id="flipSound">
+      <source src="flip.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Start Screen -->
+    <div id="startScreen">
+      <h1>🎉 Happy Birthday Porennn 🎂</h1>
+      <p>Selamat datang di diary ulang tahunmu ✨</p>
+      <div class="age-input-container">
+        <label for="ageInput">ultah yg keberapa yah ? 🤔 🎂</label>
+        <input
+          type="number"
+          id="ageInput"
+          placeholder="Masukkan usia"
+          min="1"
+          max="100"
+        />
+        <div id="ageError" class="error-message"></div>
+      </div>
+      <button id="startBtn">Start Celebration 🎉</button>
+    </div>
+
+    <!-- Tombol Musik -->
+    <button id="musicControl" onclick="toggleMusic()">🔊 Music</button>
+
+    <!-- Container Halaman -->
+    <div class="container">
+      <div class="pages" id="pages">
+        <!-- Page 1 -->
+        <section class="page" style="background: #fde2e4">
+          <h1>💖 Untuk mu Porennn</h1>
+          <p>
+            +1 Yahh, Hari ini istimewa karena kamu semakin dewasa dan penuh
+            cerita baru. Semoga semua harapanmu terkabul 🌸✨
+          </p>
+          <button class="btn" onclick="nextPage()">➡️ Lanjut</button>
+        </section>
+
+        <!-- Page 2 -->
+        <section class="page" style="background: #fff0f5">
+          <h1>💌</h1>
+          <p>
+            Semoga diusia yg bertambah dalam hidupmu ini, kamu selalu diberi
+            kekuatan untuk melangkah menghadapi setiap cobaan. Hidup memang
+            tidak selalu mudah, tapi percayalah, setiap tantangan yang datang
+            bukan untuk menjatuhkanmu, melainkan untuk membentukmu jadi lebih
+            kuat. Semoga hatimu selalu tabah, pikiranmu selalu jernih, dan
+            langkahmu selalu dipenuhi keberanian. Apa pun yang terjadi nanti,
+            jangan pernah ragu dengan dirimu sendiri—karena kamu mampu melewati
+            semuanya. Semoga hari-hari ke depan membawa lebih banyak senyum,
+            kedamaian, dan hal-hal indah yang layak kamu dapatkan, dan semoga
+            langkahmu ke depan selalu diberkahi kebahagiaan.🌿🤍
+          </p>
+          <div class="nav-btns">
+            <button class="btn" onclick="prevPage()">⬅️ Prev</button>
+            <button class="btn" onclick="nextPage()">➡️ Next</button>
+          </div>
+        </section>
+
+        <!-- Page 3 -->
+        <section class="page" style="background: #fefae0">
+          <h1>📸 Si Narsis</h1>
+          <div class="gallery">
+            <img src="poren.jpg" alt="foto1" />
+            <img src="poren1.jpg" alt="foto2" />
+            <img src="poren2.jpg" alt="foto3" />
+          </div>
+          <div class="nav-btns">
+            <button class="btn" onclick="prevPage()">⬅️ Prev</button>
+            <button class="btn" onclick="nextPage()">➡️ Next</button>
+          </div>
+        </section>
+
+        <!-- Page 4 -->
+        <section class="page" style="background: #eaf4f4">
+          <h1>🌟 Wishes</h1>
+          <p>
+            Happy birthday! Semoga di usiamu yang baru ini, hidupmu makin penuh
+            warna, kebahagiaan selalu nempel tiap hari, impianmu satu per satu
+            tercapai, kesehatan selalu oke, teman-teman dan keluarga makin
+            dekat, cinta dan tawa nggak pernah absen, dan setiap momen seru
+            serta kesempatan baru datang tanpa henti. Semoga kamu tetap jadi
+            versi terbaik dari dirimu sendiri, terus berkembang, dan nggak lupa
+            nikmati perjalanan hidup ini dengan senyum lebar setiap hari.
+            Selamat ulang tahun, Porennn! 💖
+          </p>
+          <div class="nav-btns">
+            <button class="btn" onclick="prevPage()">⬅️ Prev</button>
+            <button class="btn" onclick="backToStart()">
+              🔄 Kembali ke Awal
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
