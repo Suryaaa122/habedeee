@@ -553,6 +553,7 @@ body {
   animation: bloom 2.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   transform: scale(0) rotate(-180deg);
   filter: drop-shadow(0 10px 40px rgba(255, 105, 180, 0.4));
+  animation-play-state: paused; /* ✅ animasi ditunda dulu */
 }
 
 @keyframes bloom {
@@ -818,5 +819,13 @@ body {
   50% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* 🔧 Ringankan efek di HP */
+@media (max-width: 600px) {
+  .big-flower {
+    transform: scale(0.8);
+    filter: none;
   }
 }
