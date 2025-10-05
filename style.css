@@ -547,14 +547,17 @@ body {
 
 /* Bunga besar */
 .big-flower {
-  position: relative;
-  width: 320px;
-  height: 320px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+  width: 50vmin;  /* ✅ otomatis mengikuti sisi terkecil layar */
+  height: 50vmin; /* jadi tetap proporsional di semua device */
   animation: bloom 2.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  transform: scale(0) rotate(-180deg);
   filter: drop-shadow(0 10px 40px rgba(255, 105, 180, 0.4));
-  animation-play-state: paused; /* ✅ animasi ditunda dulu */
+  animation-play-state: paused;
 }
+
 
 @keyframes bloom {
   0% {
@@ -829,3 +832,4 @@ body {
     filter: none;
   }
 }
+
