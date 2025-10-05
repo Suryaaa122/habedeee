@@ -387,86 +387,6 @@ body {
   }
 }
 
-/* Tampilan Akhir */
-#finalScreen {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, #ffeef5, #ffd6e0, #f8a5c2);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  z-index: 9999;
-  animation: fadeInFinal 2s ease forwards;
-}
-
-@keyframes fadeInFinal {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.final-content h1 {
-  font-size: 3em;
-  color: #d63384;
-  text-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
-  margin-bottom: 20px;
-  animation: floatText 3s ease-in-out infinite;
-}
-
-@keyframes floatText {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.final-content p {
-  font-size: 1.4em;
-  color: #4a4a4a;
-  max-width: 600px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-  animation: fadeIn 3s ease;
-}
-
-.final-flowers {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.bloom {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: pink;
-  border-radius: 50%;
-  opacity: 0;
-  animation: bloomUp 4s ease infinite;
-}
-
-@keyframes bloomUp {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-
 /* 🌸 Tampilan Akhir */
 #finalScreen {
   display: none;
@@ -781,6 +701,7 @@ body {
     filter: none;
   }
 }
+
 
 
 
