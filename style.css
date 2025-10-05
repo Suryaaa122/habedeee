@@ -737,6 +737,20 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .big-flower {
+    width: 65vmin;
+    height: 65vmin;
+  }
+}
+
+@media (max-width: 480px) {
+  .big-flower {
+    width: 75vmin;
+    height: 75vmin;
+  }
+}
+
 
 
 
