@@ -701,6 +701,43 @@ body {
     filter: none;
   }
 }
+/* ✅ Penyesuaian agar bunga tampil pas di semua device */
+@media (max-width: 768px) {
+  .big-flower {
+    width: 60vmin;
+    height: 60vmin;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  .center {
+    width: 80px;
+    height: 80px;
+  }
+
+  .petal::before {
+    width: 50%;
+    height: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  .big-flower {
+    width: 70vmin;
+    height: 70vmin;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  .center {
+    width: 70px;
+    height: 70px;
+  }
+
+  .petal::before {
+    width: 55%;
+    height: 65%;
+  }
+}
+
 
 
 
