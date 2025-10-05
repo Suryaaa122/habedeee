@@ -319,15 +319,21 @@ function showBigFlower() {
   if (finalScreen) {
     finalScreen.style.display = "flex";
 
-    // Mulai animasi partikel
-    setTimeout(() => {
-      createParticles();
-    }, 1000);
+    // ✅ Paksa browser render dulu elemen sebelum animasi mulai
+    void finalScreen.offsetWidth;
 
-    // Tambah bintang berkelip
+    // ✅ Jalankan animasi bunga setelah sedikit delay
+    const bigFlower = finalScreen.querySelector(".big-flower");
+    if (bigFlower) {
+      setTimeout(() => {
+        bigFlower.style.animationPlayState = "running";
+      }, 150);
+    }
+
+    // ⭐ Tambah efek bintang
     setTimeout(() => {
       createTwinklingStars();
-    }, 1500);
+    }, 1000);
   }
 
   // Lembutkan musik
