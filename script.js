@@ -49,7 +49,7 @@ function startCelebration() {
   const inputAge = parseInt(ageInput.value);
 
   if (inputAge > correctAge) {
-    showError(ageError, "Idih tua bgt yg bnr aja 😆");
+    showError(ageError, "ketuaan ga siee ? 😆");
     ageInput.value = "";
     ageInput.focus();
     return;
@@ -273,4 +273,89 @@ function debugInfo() {
   );
   console.log("Music element:", music);
   console.log("Music control button:", btn);
+}
+
+function showFinalScreen() {
+  console.log("Menampilkan tampilan akhir...");
+
+  // Sembunyikan halaman utama
+  const container = document.querySelector(".container");
+  if (container) container.style.display = "none";
+
+  // Tampilkan layar akhir
+  const finalScreen = document.getElementById("finalScreen");
+  if (finalScreen) {
+    finalScreen.style.display = "flex";
+    createFinalFlowers();
+  }
+
+  // Putar musik pelan (opsional)
+  if (music) {
+    music.volume = 0.2;
+  }
+}
+
+// Efek bunga mekar di tampilan akhir
+function createFinalFlowers() {
+  const area = document.querySelector(".final-flowers");
+  if (!area) return;
+  area.innerHTML = "";
+
+  for (let i = 0; i < 15; i++) {
+    const flower = document.createElement("div");
+    flower.className = "bloom";
+    flower.style.left = `${Math.random() * 100}%`;
+    flower.style.top = `${Math.random() * 100}%`;
+    area.appendChild(flower);
+  }
+}
+function showBigFlower() {
+  console.log("Menampilkan bunga besar...");
+
+  const container = document.querySelector(".container");
+  if (container) container.style.display = "none";
+
+  const finalScreen = document.getElementById("finalScreen");
+  if (finalScreen) {
+    finalScreen.style.display = "flex";
+
+    // Mulai animasi partikel
+    setTimeout(() => {
+      createParticles();
+    }, 1000);
+
+    // Tambah bintang berkelip
+    setTimeout(() => {
+      createTwinklingStars();
+    }, 1500);
+  }
+
+  // Lembutkan musik
+  if (music) music.volume = 0.25;
+}
+
+function createTwinklingStars() {
+  const finalScreen = document.getElementById("finalScreen");
+  if (!finalScreen) return;
+
+  setInterval(() => {
+    for (let i = 0; i < 3; i++) {
+      const star = document.createElement("div");
+      star.textContent = "✨";
+      star.style.cssText = `
+        position: absolute;
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        font-size: ${20 + Math.random() * 15}px;
+        pointer-events: none;
+        animation: twinkle ${1 + Math.random() * 2}s ease-in-out;
+      `;
+
+      finalScreen.appendChild(star);
+
+      setTimeout(() => {
+        if (star.parentNode) star.remove();
+      }, 3000);
+    }
+  }, 1000);
 }
